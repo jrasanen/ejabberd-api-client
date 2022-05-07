@@ -1,5 +1,5 @@
 declare module "ejabbered-api-client" {
-  declare class Client {
+  class Client {
     constructor(url: string);
     changePassword(user: string, host: string, newpass: string): Promise<any>;
     changeRoomOption(name: string, service: string, option: string, value: string): Promise<any>;

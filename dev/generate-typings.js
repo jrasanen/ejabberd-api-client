@@ -13,7 +13,7 @@ const checkReservedWords = (name) =>  {
 
 // ¯\_(ツ)_/¯
 console.log(`declare module "ejabbered-api-client" {`)
-console.log("  declare class Client {")
+console.log("  class Client {")
 console.log("    constructor(url: string);")
 Object.entries(commands)
     .forEach(
