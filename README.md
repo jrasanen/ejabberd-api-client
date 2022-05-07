@@ -16,7 +16,7 @@ npm install @appunto/ejabberd-api-client
 ```
 const Client = require('@appunto/ejabberd-api-client');
 
-const client = new Client('localhost', 5443);
+const client = new Client('https://localhost:5443');
 
 client.status().then(
   result => console.log(result);
