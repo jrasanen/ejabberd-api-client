@@ -2,19 +2,16 @@ const { expect } = require('chai');
 
 const Client = require('../src/index.js');
 
-
-const HOSTNAME = 'localhost';
-const PORT     = 15443;
+const HOSTNAME = 'http://localhost';
+const PORT     = 5280;
 
 before(function() {
   const timestamp = new Date().getTime();
 
-  this.client    = new Client(HOSTNAME, PORT);
+  this.client    = new Client(`${HOSTNAME}:${PORT}`);
   this.username1 = `username_${timestamp}_1`;
   this.username2 = `username_${timestamp}_2`;
 })
-
-
 
 describe('register', function() {
   it('should allow the registration of new user', async function() {
