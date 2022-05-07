@@ -31,6 +31,12 @@ client.registeredUsers('localhost').then(
 // user1, user2, ...
 
 ```
+
+## Developing
+
+* Start the ejabberd server using docker-compose: `npm run jabberd`
+* Run the tests: `npm test` or start a mocha watch: `npm run test:watch`
+
 ## API
 
 ### `Client(host, port)`
