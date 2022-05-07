@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "NodeJS ejabberd REST API client",
   "main": "src/index.js",
+  "typings": "types/index.d.ts",
   "scripts": {
-    "test": "cd dev && ./start-ejabberd.sh && cd .. && mocha -w --recursive"
+    "generate-types": "node ./dev/generate-typings.js > types/index.d.ts",
+    "jabberd": "cd dev && docker-compose up -d",
+    "test:watch": "mocha -w --recursive ./test",
+    "test": "mocha --recursive ./test"
   },
   "repository": {
     "type": "git",
@@ -23,11 +27,11 @@
   },
   "homepage": "https://github.com/appunto-io/ejabberd-api-client#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.27.2",
     "lodash.camelcase": "^4.3.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
   }
 }
