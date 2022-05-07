@@ -1,0 +1,13 @@
+services:
+  ejabberd:
+    image: ghcr.io/processone/ejabberd:latest
+    volumes:
+      - ./ejabberd.yml:/opt/ejabberd/conf/ejabberd.yml
+      - ./ejabberd.pem:/opt/ejabberd/ejabberd.pem
+    ports:
+      - "3478:3478"
+      - "5222:5222"
+      - "5223:5223"
+      - "5269:5269"
+      - "5280:5280"
+      - "5443:5443"
