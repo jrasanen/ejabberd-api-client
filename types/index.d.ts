@@ -52,7 +52,7 @@ declare class Client {
   registeredUsers(host: string): Promise<any>;
   registeredVhosts(): Promise<any>;
   removeMamForUser(user: string, server: string): Promise<any>;
-  removeMamForUserWithPeer(user: string, server: string, with: string): Promise<any>;
+  removeMamForUserWithPeer(user: string, server: string, with_: string): Promise<any>;
   resourceNum(): Promise<any>;
   roomsUnusedDestroy(host: string, days: string): Promise<any>;
   roomsUnusedList(host: string, days: string): Promise<any>;

@@ -3,13 +3,22 @@ const camelCase = require('lodash.camelcase');
 
 const commands = require('../src/commands.js');
 
+const resevedWords = ['with']
+
+const checkReservedWords = (name) =>  {
+    return resevedWords.includes(name)
+        ? `${name}_`
+        : name
+}
+
+
 console.log("declare class Client {")
 console.log("  constructor(url: string);")
 Object.entries(commands)
     .forEach(
         ([name, {arguments = []}]) => {
             const fnCall = camelCase(name)
-            const args = arguments.map(x => `${x}: string`).join(', ')
+            const args = arguments.map(x => `${checkReservedWords(x)}: string`).join(', ')
             console.log(`  ${fnCall}(${args}): Promise<any>;`)
         }
     )
