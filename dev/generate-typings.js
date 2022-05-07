@@ -12,16 +12,18 @@ const checkReservedWords = (name) =>  {
 }
 
 // ¯\_(ツ)_/¯
-console.log(`declare module "ejabbered-api-client" {`)
-console.log("  class Client {")
-console.log("    constructor(url: string);")
+console.log("declare class Client {")
+console.log("  constructor(url: string, options?: { username: string, password: string });")
 Object.entries(commands)
     .forEach(
         ([name, {arguments = []}]) => {
             const fnCall = camelCase(name)
             const args = arguments.map(x => `${checkReservedWords(x)}: string`).join(', ')
-            console.log(`    ${fnCall}(${args}): Promise<any>;`)
+            console.log(`  ${fnCall}(${args}): Promise<any>;`)
         }
     )
-console.log("  }")
+console.log("}")
+
+console.log(`declare module "ejabbered-api-client" {`)
+console.log(`  export = Client`)
 console.log("}")
