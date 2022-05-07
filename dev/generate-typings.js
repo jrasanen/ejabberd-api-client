@@ -4,7 +4,7 @@ const camelCase = require('lodash.camelcase');
 const commands = require('../src/commands.js');
 
 console.log("declare class Client {")
-console.log("  constructor(options);")
+console.log("  constructor(url: string);")
 Object.entries(commands)
     .forEach(
         ([name, {arguments = []}]) => {

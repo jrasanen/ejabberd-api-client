@@ -1,5 +1,5 @@
 declare class Client {
-  constructor(options);
+  constructor(url: string);
   changePassword(user: string, host: string, newpass: string): Promise<any>;
   changeRoomOption(name: string, service: string, option: string, value: string): Promise<any>;
   checkAccount(user: string, host: string): Promise<any>;
